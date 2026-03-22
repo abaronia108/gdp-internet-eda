@@ -9,9 +9,8 @@ capita and internet adoption across 150+ countries from 2000 to 2022.
 - World Bank Country Metadata (region and income group classifications)
 
 ## Overview
-This project merges and cleans three datasets to create a unified 
-analytical dataset, then explores how GDP per capita and internet 
-adoption relate globally across income groups and geographic regions.
+I merged and cleaned three separate datasets to create a unified dataset, before diving into 
+the relationship between GDP per capita and internet usage around the world. 
 
 ## Key Findings
 - GDP per capita and percent internet users showed strong positive 
@@ -20,8 +19,8 @@ adoption relate globally across income groups and geographic regions.
   per capita across most countries. By the 2020s this relationship 
   reversed — GDP growth outpaced internet adoption as high-income 
   countries approached saturation
-- In 2000, zero countries had high internet usage (>66%); by 2022, 
-  124 countries did. Low internet usage countries dropped from 170 
+- In 2000, zero countries had high internet usage (>66%). By 2022, 
+  124 countries did. Low internet usage countries also dropped from 170 
   to just 22 over the same period
 - Sub-Saharan Africa showed the slowest internet adoption of any 
   global region; Europe & Central Asia and North America showed 
@@ -31,8 +30,8 @@ adoption relate globally across income groups and geographic regions.
   the digital divide narrowed substantially between 2000 and 2022
 
 ## Methods
-- Data cleaning and standardization across three datasets (wide-to-long 
-  reshaping, country name normalization, inner/left merges)
+- Data cleaning and standardization across three datasets, including reshaping from 
+  wide form to long form, normalizing country names accross datasets, and inner/left merges
 - Log transformation of GDP per capita to address positive skew
 - Spearman correlation analysis and correlation heatmaps by year
 - Internet usage binning (low/medium/high) to track global adoption 
