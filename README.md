@@ -1,4 +1,4 @@
-# EDA: GDP per Capita vs. Internet Usage (2000–2022)
+# Economic Development and Internet Penetration: A Cross-Country Analysis
 
 Exploratory data analysis examining the relationship between GDP per 
 capita and internet adoption across 150+ countries from 2000 to 2022.
