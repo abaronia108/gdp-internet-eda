@@ -1,50 +1,80 @@
-# Economic Development and Internet Penetration: A Cross-Country Analysis
+# Digital Divide Analysis: GDP vs Internet Adoption
 
-Exploratory data analysis examining the relationship between GDP per 
-capita and internet adoption across 150+ countries from 2000 to 2022.
+## Overview  
+This project analyzes how economic development relates to internet adoption across countries using World Bank data (2000–2022). The goal is to quantify expected internet usage based on GDP per capita and identify countries that overperform or underperform relative to their income level.
 
-## Data Sources
-- [World Bank GDP per Capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD)
-- [UN Internet Usage Data](https://data.un.org/)
-- World Bank Country Metadata (region and income group classifications)
+---
 
-## Overview
-I merged and cleaned three separate datasets to create a unified dataset, before diving into 
-the relationship between GDP per capita and internet usage around the world. 
+## Objective  
+- Measure the relationship between GDP per capita and internet usage  
+- Estimate expected internet adoption using a regression model  
+- Identify countries that exceed or fall short of expectations  
 
-## Key Findings
-- GDP per capita and percent internet users showed strong positive 
-  Spearman correlation for every year studied (minimum r = 0.89)
-- In earlier years (2000–2010), internet usage grew faster than GDP 
-  per capita across most countries. By the 2020s this relationship 
-  reversed — GDP growth outpaced internet adoption as high-income 
-  countries approached saturation
-- In 2000, zero countries had high internet usage (>66%). By 2022, 
-  124 countries did. Low internet usage countries also dropped from 170 
-  to just 22 over the same period
-- Sub-Saharan Africa showed the slowest internet adoption of any 
-  global region; Europe & Central Asia and North America showed 
-  the fastest
-- By the 2020s, internet saturation among high-income nations 
-  reduced the slope of the GDP-internet trendline significantly — 
-  the digital divide narrowed substantially between 2000 and 2022
+---
 
-## Methods
-- Data cleaning and standardization across three datasets, including reshaping from 
-  wide form to long form, normalizing country names accross datasets, and inner/left merges
-- Log transformation of GDP per capita to address positive skew
-- Spearman correlation analysis and correlation heatmaps by year
-- Internet usage binning (low/medium/high) to track global adoption 
-  over time
-- Visualizations: line plots, scatter plots with OLS trendlines 
-  (Plotly), violin plots by income group, correlation heatmaps
+## Dataset  
+- Source: World Bank  
+- Coverage: 150+ countries  
+- Timeframe: 2000–2022  
+- Key variables:
+  - GDP per capita (USD)  
+  - Internet users (% of population)  
 
-## Setup
-```bash
-pip install pandas numpy matplotlib seaborn plotly scipy
-```
+---
 
-Then open `gdp_internet_eda.ipynb` in Jupyter or Google Colab.
+## Methodology  
+
+### Data Preparation  
+- Cleaned and merged multi-year datasets  
+- Standardized country-level data  
+- Applied log transformation to GDP per capita to address skew  
+
+### Exploratory Analysis  
+- Analyzed global trends in internet adoption over time  
+- Examined correlation between GDP and internet usage  
+- Visualized regional and income-based disparities  
+
+### Regression-Based Analysis (2022)  
+A log-linear regression model was used to estimate expected internet adoption:
+
+- Internet Usage ~ log(GDP per capita)
+
+Residuals (actual − predicted) were used to measure performance:
+- **Positive residual** → overperformance  
+- **Negative residual** → underperformance  
+
+This approach identifies countries performing above or below expectations given their economic level.
+
+---
+
+## Key Findings  
+- GDP per capita strongly predicts internet adoption, with diminishing returns at higher income levels  
+- Significant variation exists across countries beyond what income alone explains  
+- Some countries outperform expectations, suggesting stronger infrastructure or policy  
+- Others underperform relative to income, indicating potential barriers to access  
+
+---
+
+## Limitations  
+- The model is cross-sectional (2022) and not causal  
+- Linear regression can produce predicted values above 100% at high income levels due to saturation effects  
+- Does not explicitly account for factors like infrastructure, policy, or inequality  
+
+---
+
+## Technologies Used  
+- Python (Pandas, NumPy)  
+- Statsmodels (OLS regression)  
+- Matplotlib / Seaborn  
+- Jupyter Notebook  
+
+---
+
+## How to Run  
+1. Clone the repository  
+2. Install dependencies:  
+   `pip install -r requirements.txt`  
+3. Open the notebook and run all cells  
 
 ## File Structure
 ```
