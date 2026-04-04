@@ -3,7 +3,7 @@
 ## Overview
 
 This project analyzes how economic development relates to internet adoption across countries
-using World Bank data (2000–2022). The goal is to quantify expected internet usage based on
+using UN and World Bank data (2000–2022). The goal is to quantify expected internet usage based on
 GDP per capita and identify countries that overperform or underperform relative to their
 income level.
 
